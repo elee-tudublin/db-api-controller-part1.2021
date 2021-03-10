@@ -18,10 +18,14 @@ app.use((req, res, next) => {
 
 
 
-// Allow app to support differnt body content types (using the bidyParser package)
+// Allow app to support differnt body content types (using the bodyParser package)
 app.use(express.text());
-app.use(express.json()); // support json encoded bodies
-app.use(express.urlencoded({ extended: true })); // support url encoded bodies
+// support json encoded bodies
+app.use(express.json());
+// support url encoded bodies
+app.use(express.urlencoded({
+    extended: true 
+}));
 
 // cors
 // https://www.npmjs.com/package/cors
