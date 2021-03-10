@@ -1,7 +1,6 @@
 // require imports packages required by the application
 const express = require('express');
 const cors = require('cors')
-const bodyParser = require('body-parser');
 
 // Specify Host and port
 const HOST = '127.0.0.1';
@@ -20,9 +19,9 @@ app.use((req, res, next) => {
 
 
 // Allow app to support differnt body content types (using the bidyParser package)
-app.use(bodyParser.text());
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support url encoded bodies
+app.use(express.text());
+app.use(express.json()); // support json encoded bodies
+app.use(express.urlencoded({ extended: true })); // support url encoded bodies
 
 // cors
 // https://www.npmjs.com/package/cors
